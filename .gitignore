@@ -1,3 +1,6 @@
+# Excluding iban-app-env virtual env
+iban-app-env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
