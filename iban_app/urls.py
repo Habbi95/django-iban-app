@@ -20,5 +20,6 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', TemplateView.as_view(template_name='account/login.html'))
+    path('', TemplateView.as_view(template_name='account/login.html')),
+    path('crud/', include('iban_crud.urls')),
 ]

@@ -36,6 +36,8 @@ AUTHENTICATION_BACKENDS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'iban_crud.apps.IbanCrudConfig',
+    'localflavor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
