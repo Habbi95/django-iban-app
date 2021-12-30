@@ -106,9 +106,9 @@ WSGI_APPLICATION = 'iban_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres', # TODO: All of this should be retrieved using env vars
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': os.environ.get('POSTGRES_NAME', 'postgres'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
