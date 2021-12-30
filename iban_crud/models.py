@@ -11,4 +11,4 @@ class IBANUser(models.Model):
     iban = IBANField()
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} IBAN:  {str(self.iban)}'
+        return f'{self.first_name} {self.last_name} IBAN: {str(self.iban)}'
