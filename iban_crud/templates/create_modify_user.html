@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>IBAN app, by Javier Vargas</title>
+    </head>
+    <body>
+        {% if already_exists %}
+            <h1>User information</h1>
+        {% else %}
+            <h1>Introduce new user information</h1>
+        {% endif %}
+        <form action="{% if already_exists %} {% url 'modify_user' id %} {% else %} {% url 'create_user' %} {% endif %}" method="post">
+            {% csrf_token %}
+            <b>
+                {{ form.as_p }}
+            </b>
+            <input class="btn" style="background-color: #7ac04b;" type="submit" value="{% if already_exists %} Update {% else %} Create {% endif %}">
+            {% if already_exists %}
+                <a href="{% url 'delete_user' id %}" class="btn" style="background-color: #c06c70;" type="submit"> Delete </a>
+            {% endif %}
+            <a href="{% url 'get_users' %}" class="btn border border-dark" type="submit">
+                Back
+            </a>
+        </form>
+    </body>
+</html>
