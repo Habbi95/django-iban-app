@@ -12,6 +12,21 @@
     </head>
     <body>
         <h1>List of users added by {{ request.user.username }}</h1>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "success" %}
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> {{ message }}
+                        <br>
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger">
+                        <strong>Error</strong> {{ message }}
+                        <br>
+                    </div>
+                {% endif %}
+            {% endfor %}  
+        {% endif %}
         {% if iban_user_list %}
             <ul>
             {% for user in iban_user_list %}

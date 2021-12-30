@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404
+from django.contrib import messages
 
 from .models import IBANUser
 from .forms import IBANUserForm
@@ -21,6 +22,7 @@ def delete_user(request, user_id):
         raise Http404("User does not exist. Please check the owner of the user")
 
     iban_user.delete()
+    messages.success(request, 'User deleted')
     return redirect(get_users)
 
 @login_required
@@ -48,7 +50,13 @@ def create_or_update_user(request, user_id=None):
                 iban = iban_user.iban
 
             IBANUser.objects.update_or_create(first_name=first_name, last_name=last_name, created_by=created_by, iban=iban, defaults=defaults)
-            return redirect(get_users)
+            messages.success(request, 'User created' if not user_id else 'User updated')
+        else:
+            list_of_errors = form.errors.as_data()
+            for error in list_of_errors:
+                messages.error(request, str(list_of_errors[error].pop()))
+
+        return redirect(get_users)
 
     else:
         # GET method, it could be modify page or create new one
