@@ -70,5 +70,5 @@ It will launch some basic testing to the models and views, then prepare the conf
 
 To kick off this, just clone this repo, and in the same directory run: **docker_compose up**
 
-Demo:
-![Demo](https://github.com/Habbi95/django-iban-app/blob/99ba03ff04302e1d768cfc633d9e2369f7b722ed/screenshots/screen-capture.webm)
+Download the video:
+(https://github.com/Habbi95/django-iban-app/blob/99ba03ff04302e1d768cfc633d9e2369f7b722ed/screenshots/screen-capture.webm)
