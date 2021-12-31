@@ -45,7 +45,7 @@ SITE_ID to 3 in settings.py
 **IMPORTAN!** This value is de id from Site object. It should match with the one we already created
 If you face this error while login:
 
-![SITE_ID error](https://github.com/Habbi95/django-iban-app/blob/99ba03ff04302e1d768cfc633d9e2369f7b722ed/screenshots/image.png)
+![SITE_ID error](https://github.com/Habbi95/django-iban-app/blob/766e43f26131665d3ea5b967a963327e8723f8b7/screenshots/image.png)
 
 Please check this SITE_ID value in settings.py and modify it with other one
     
