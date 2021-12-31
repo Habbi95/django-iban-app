@@ -1,3 +1,4 @@
+data
 .vscode
 # Excluding iban-app-env virtual env
 iban-app-env
