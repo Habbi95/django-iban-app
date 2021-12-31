@@ -1,5 +1,5 @@
 echo "Running entrypoint.sh"
-sleep 10
+sleep 15
 python manage.py test iban_crud/tests
 python manage.py makemigrations
 python manage.py migrate
