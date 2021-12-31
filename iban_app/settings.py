@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
 # OAuth definition (allauth application)
 
-SITE_ID = 4
+SITE_ID = 3
 
 # Provider specific settings
 
