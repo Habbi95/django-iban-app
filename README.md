@@ -32,9 +32,9 @@ django-admin startproject iban_app -> To create new project
 - pip install psycopg2
 
 **Setup database in settings.py**
-    python manage.py makemigrations 
-    python manage.py migrate
-    python manage.py createsuperuser 
+python manage.py makemigrations 
+python manage.py migrate
+python manage.py createsuperuser 
 
 **OAuth setup**
 pip install django-allauth
